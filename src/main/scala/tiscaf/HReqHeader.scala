@@ -138,7 +138,7 @@ private class HReqHeader(streamStrings : Seq[String]) extends HReqHeaderData {
   }
 
   private def parseAddress(s : String) : HAddress = {
-    val parts = s.split("\\?")
+    val parts = s.split("\\?", 2)
     val query = if (parts.length == 2) parts(1) else ""
     val uri = {
       val full = parts(0).replace('\\', '/')
